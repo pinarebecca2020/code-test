@@ -1,11 +1,13 @@
 <template>
-  <Tutorial />
+  <LayoutBase />
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import LayoutBase from '../components/Layout.vue'
 
-export default Vue.extend({
-  name: 'IndexPage',
-})
+export default {
+  components: {
+    LayoutBase,
+  },
+}
 </script>
