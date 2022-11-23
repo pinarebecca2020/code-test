@@ -2,12 +2,23 @@
 import Vue from 'vue'
 export default Vue.extend({
   name: 'LayoutBase',
+  mounted() {
+    this.firstTop()
+  },
+  methods: {
+    firstTop() {
+      return this.$refs.top.clientWidth
+    },
+  },
 })
 </script>
 <template>
   <div class="container">
     <header class="header">
-      <div class="head">Top 1</div>
+      <div ref="top" class="head">
+        Top 1 <br />
+        {{ firstTop() }}
+      </div>
       <div class="head">Top 2</div>
     </header>
 
@@ -21,6 +32,7 @@ export default Vue.extend({
     </footer>
   </div>
 </template>
+
 <style>
 .container {
   height: 100vh;
